@@ -28,23 +28,50 @@ public class DANI extends PApplet {
        
 	}
 
+	String[] words;
+
 	public void loadFile()
 	{
 		String[] lines = loadStrings("small.txt"); // Load a text file into a String array
-		String words = " ";
+		String allWords = " ";
 
-		
 		for(String line : lines)
 		{
-			words += split(line, ' ');			
+			allWords += ' ' + line;		
 		}
+		
+		allWords = allWords.replaceAll("[^\\w\\s]",""); // Remove punction characters
+		allWords = allWords.toLowerCase();
 
-		System.out.println(words);
-		// Split a string into an array of words
-		//w.replaceAll("[^\\w\\s]",""); // Remove punction characters
-		//s.toLowerCase() // Convert a string to lower case 
+		words = split(allWords, ' ');
+
+		for(String word: words)
+		{
+			System.out.println(word + ' ');
+		}
 	}
 
+	public boolean findWord(String str)
+	{
+		boolean bool = true;
+		for(String word: words)
+		{
+			if(word == str)
+			{
+				bool = true;
+			}
+			else
+			{
+				bool = false;
+			}
+		}
+		return bool;
+	}
+
+	public void printModel()
+	{
+
+	}
 	public void keyPressed() {
 
 	}

@@ -25,6 +25,7 @@ public class Word {
         return retString;
     }
 
+
     public String getWord() {
         return word;
     }
@@ -32,6 +33,6 @@ public class Word {
     public ArrayList<Follow> getFollows() {
         return follows;
     }
-    
-        
+
 }
+    
