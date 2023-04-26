@@ -29,6 +29,7 @@ public class DANI extends PApplet {
 	}
 
 	String[] words;
+	String[] follows;
 
 	public void loadFile()
 	{
@@ -40,10 +41,43 @@ public class DANI extends PApplet {
 			allWords += ' ' + line;		
 		}
 		
-		allWords = allWords.replaceAll("[^\\w\\s]",""); // Remove punction characters
+		allWords = allWords.replaceAll("[^\\w\\s]",""); // Remove punctuation characters
 		allWords = allWords.toLowerCase();
 
 		words = split(allWords, ' ');
+
+		ArrayList<Follow> follows = new ArrayList<Follow>();
+
+
+		int count = 0;
+		
+		for(int i = 0; i < words.length; i++)
+		{
+			
+			for(int j = 0; j < words.length; j++)
+			{
+				if(words[j].equals(words[i]) && words[j+1].equals(words[i+1]))
+				{
+					count++;
+				}
+			}
+
+		Follow f = new Follow(words[i], count);
+		follows.add(f);
+		System.out.println(f);
+		}
+
+		for(int k = 0; k < words.length; k++)
+		{
+			for(int l = 1; l < words.length; l++)
+			{
+				if(follows.get(k).getWord() == words[l])
+				{
+					
+				}
+			}
+		}
+
 
 		/* 
 		for(String word: words)
@@ -53,23 +87,26 @@ public class DANI extends PApplet {
 		*/
 	}
 
-	public int findWord(String str)
+	public boolean findWord(String str)
 	{
-		int count = 0;
+		boolean bool = true;
 		for(String word: words)
 		{
 			if(word == str)
 			{
-				count++;
+				bool = true;
+			}
+			else
+			{
+				bool = false;
 			}
 		}
-		return count;
+		return bool;
 	}
 
 	public void printModel()
 	{
 		
-				
 	}
 	public void keyPressed() {
 

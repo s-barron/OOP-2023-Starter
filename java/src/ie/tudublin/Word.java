@@ -14,6 +14,22 @@ public class Word {
         this.follows = follows;
     }
 
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public ArrayList<Follow> getFollows() {
+        return follows;
+    }
+
+    public void setFollows(ArrayList<Follow> follows) {
+        this.follows = follows;
+    }
+
     public int findFollow(String str)
 	{
 		int count = 0;
@@ -36,15 +52,5 @@ public class Word {
         }        
         return retString;
     }
-
-
-    public String getWord() {
-        return word;
-    }
-
-    public ArrayList<Follow> getFollows() {
-        return follows;
-    }
-
 }
     
