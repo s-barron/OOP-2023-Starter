@@ -51,12 +51,12 @@ public class DANI extends PApplet {
 
 		int count = 0;
 		
-		for(int i = 0; i < words.length; i++)
+		for(int i = 0; i < words.length-1; i++)
 		{
 			
-			for(int j = 0; j < words.length; j++)
+			for(int j = 1; j < words.length-1; j++)
 			{
-				if(words[j].equals(words[i]) && words[j+1].equals(words[i+1]))
+				if(words[i].equals(words[j]))
 				{
 					count++;
 				}
@@ -66,17 +66,19 @@ public class DANI extends PApplet {
 		follows.add(f);
 		System.out.println(f);
 		}
-
+		
+		/* 
 		for(int k = 0; k < words.length; k++)
 		{
 			for(int l = 1; l < words.length; l++)
 			{
 				if(follows.get(k).getWord() == words[l])
 				{
-					
+
 				}
 			}
 		}
+		*/
 
 
 		/* 
