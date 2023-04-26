@@ -45,32 +45,31 @@ public class DANI extends PApplet {
 
 		words = split(allWords, ' ');
 
+		/* 
 		for(String word: words)
 		{
 			System.out.println(word + ' ');
 		}
+		*/
 	}
 
-	public boolean findWord(String str)
+	public int findWord(String str)
 	{
-		boolean bool = true;
+		int count = 0;
 		for(String word: words)
 		{
 			if(word == str)
 			{
-				bool = true;
-			}
-			else
-			{
-				bool = false;
+				count++;
 			}
 		}
-		return bool;
+		return count;
 	}
 
 	public void printModel()
 	{
-
+		
+				
 	}
 	public void keyPressed() {
 

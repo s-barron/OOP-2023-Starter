@@ -14,13 +14,25 @@ public class Word {
         this.follows = follows;
     }
 
+    public int findFollow(String str)
+	{
+		int count = 0;
+		for(Follow f: follows)
+		{
+			if(f.getWord() == str)
+			{
+				count++;
+			}
+        }
+		return count;     
+    }
     @Override
     public String toString()
     {
         String retString = "";
         for(Follow f: follows)
         {
-            retString += f.getWord();
+            retString += f.getWord() + ": \n";
         }        
         return retString;
     }
